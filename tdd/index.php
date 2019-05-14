@@ -1,16 +1,13 @@
 <?php
 require_once 'database.php';
 
-$monday = "monday";
-$tuesday = "tuesday";
-$wednesday = "wednesday";
-$thursday = "thursday";
-$friday = "friday";
+
+$today = date ('l');
 
 
-$requeteSql = "SELECT name, day FROM music WHERE day=:day";
+$requeteSql = "SELECT name, day FROM music WHERE day=:day order by rand()";
 $resultSql = $pdo->prepare($requeteSql);
-$resultSql->execute(array(':day'=>$wednesday));
+$resultSql->execute(array(':day'=>$today));
 $info = $resultSql->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
@@ -28,7 +25,7 @@ $info = $resultSql->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body>
-    <h1>Hello <?= $info[2]['day'] ?></h1>
+    <h1>Hello <?= $today ?></h1>
     <iframe width="840" height="473" src="https://www.youtube.com/embed/<?= $info[2]['name'] ?>?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </body>
 
