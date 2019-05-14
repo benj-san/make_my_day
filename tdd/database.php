@@ -1,7 +1,7 @@
 <?php
 
 $name='root';
-$password='123';
+$password='Aphroditesçç';
 $host='localhost';
 $bdd='hello';
 
