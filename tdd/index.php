@@ -1,3 +1,7 @@
+<?php
+require_once 'database.php';
+?>
+
 <!doctype html>
 <html lang="en-EN">
 <head>
@@ -10,6 +14,7 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
+
     <h1>Hello</h1>
     <iframe width="840" height="473" src="https://www.youtube.com/embed/Z68u6dJqoI0?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </body>
